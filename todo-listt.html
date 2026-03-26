@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="inputBox">
+        <input type="text" class="enterTask">
+        <input type="date" class="dateInp" name="" id="">
+        <button onclick="AddTask()" class="addBtn">Add Task</button>
+    </div>
+    <div class="Tasks">
+
+    </div>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        renderTasks();
+        function AddTask() {
+            name = document.querySelector('.enterTask').value;
+            date = document.querySelector('.dateInp').value;
+            tasks.push({ name : name, date :date});
+            saveTasks();
+            renderTasks();
+        }
+        function renderTasks() {
+
+            document.querySelector('.Tasks').innerHTML = '';
+            for (i = 0; i < tasks.length; i++) {
+                document.querySelector('.Tasks').innerHTML += `<div class="task">
+            <p class="name">${tasks[i].name}</p>
+            <p class="date">${tasks[i].date}</p>
+            <button onclick="tasks.splice(${i}, 1);renderTasks();
+            saveTasks();" class="">Delete</button>
+        </div>
+        `}
+        }
+        function saveTasks(){
+            localStorage.setItem('tasks',JSON.stringify(tasks));
+        }
+
+    </script>
+</body>
+
+</html>
