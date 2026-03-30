@@ -1,10 +1,12 @@
 import { data } from "./data/todoData.js";
+
 renderTasks();
+
 function renderTasks() {
   let taskhtml = "";
   data.forEach((task) => {
     taskhtml += `      <div class="task title-${task.id}">
-        <div>
+        <div class="taskDetails>
 
           <p class="name">${task.name}</p>
           <p class="date">${task.date}</p>
@@ -15,6 +17,7 @@ function renderTasks() {
         </div>
       </div>`;
     document.querySelector(".Tasks").innerHTML = taskhtml;
+    deleteBtn()
   });
 }
 

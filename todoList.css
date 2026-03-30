@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(52, 52, 52);
+    color: white;
+      font-family: "Quantico", sans-serif;
+}
+.inputBox{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.enterTask{
+   flex: 1;
+   background-color: antiquewhite;
+       border: solid 3px rgb(0, 0, 0)
+}
+
+.dateInp{
+    
+   background-color: antiquewhite;
+        border: solid 3px rgb(0, 0, 0);
+        padding: 0px 5px;
+}
+.name{
+    font-size: 100px;
+}
+
+.addBtn{
+    background-color: rgb(255, 202, 103);
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    
+    border: solid 3px rgb(0, 0, 0)
+}
+.addBtn:hover{
+    color: white;
+    border: solid 3px white
+}
+.addBtn:active{
+    border: solid 3px rgb(126, 255, 175);
+}
+
+.task{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    ;
+}
+
+.taskDetails{
+    flex: 1;
+}
